@@ -1,381 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title class="head">GAC</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <style>
-        nav .material-icons{
-            display:none;
-        }
-        @media only screen and (max-width: 600px){
-            .header-text{
-                font-size: 50px;
-            }
-            nav .material-icons{
-                display: block;
-                font-size: 35px;
-                color:#efc437;
-            }
-            nav ul{
-                background:  #45B39D;
-                position: fixed;
-                top: 0;
-                right: -200px;
-                width: 200px;
-                height: 95vh;
-                padding-top: 50px;
-                z-index:2 ;
-                transition: right 0.5s;
-            }
-            .container nav li h1 {
-                margin-left:-40px;
-            }
-            nav ul li{
-                display: block;
-                font-size: 25px;
-            }
-            nav ul .material-icons{
-                position: absolute;
-                top:25px;
-                left: 25px;
-                cursor: pointer;
-            }
-            .subtitle{
-                margin-top:-15%;
-                font-size:40px;
-            }
-            .about-col-1{
-                font-size:20 px;
-                margin-bottom:30px;
-            }
-            .about-col-2{
-                font-size: 14px;
-            }
-            .about-col-3{
-                font-size: -44px;
-            }
-            .contact-left{
-                flex-basis:100%
-            }
-            .work-list{
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-                grid-gap: 40px;
-                margin-top: 50px;
-                margin-left:70px;
-            }
-            #acceuil{
-                width:200%;
-            }
-            .About-col-1  h1{
-                width: 5%;
-                margin-left:-70px;
-            }
-            .About-col-2  h1{
-                width: -10%;
-                margin-left:-70px;
-            }
-            .About-col-4 {
-                margin-left:-400px;
-                margin-top:-220px;
-                width:120%;
-            }
-            .About-col-5 {
-                margin-top:220px;
-            }
-            .services-col-1{
-                margin-left:160px;
-                text-align:center;
-            }
-            .services-col-2 {
-                margin-top:160px;
-                width:220%;
-            }
-            .services-col-3 {
-                margin-top:160px;
-                width:200%;
-            }
-            .services-col-4 {
-                margin-top:160px;
-                width:200%;
-            }
-        }
-    </style>
-    <style>
-        .background-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-        .background-video img {
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    </style>
+<title class="head">GAC</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
-<body>
-<div class="background-video">
-    <img src="images/Untitled design (2).png" alt="Background">
-</div>
-
-<div id="wrapper">
-    <div id="header">
-        <div class="container">
-            <nav>
-                <li><h1>GAC-media</h1> </li>
-                <ul id="sidemenu">
-                    <li><a href="#acceuil">about-us</a></li>
-                    <li><a href="#services">services</a></li>
-                    <li><a href="#quote">PDG</a></li>
-                    <li><a href="#contact">contact</a></li>
-                </ul>
-            </nav>
-        </div>
-        <style>
-            #header{
-                width:80%;
-                margin-left: auto;
-                margin-right:auto;
-                height: 100vh;
-                text-align:center;
-            }
-            .container{
-                padding: 10px 5%;
-            }
-            nav{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                flex-wrap: wrap;
-            }
-            nav ul li {
-                display: inline-block;
-                list-style: none;
-                margin:10px 20px;
-            }
-            li {
-                display: inline-block;
-                list-style: none;
-                margin:10px 20px;
-            }
-            nav ul li a{
-                color:#000000;
-                text-decoration:none;
-                font-size: 18px;
-                position:relative;
-            }
-            nav ul li a::after{
-                content: '';
-                width:0;
-                height: 3px;
-                background:gray ;
-                position: absolute;
-                left:0;
-                bottom:-6px;
-                transition:0.5s;
-            }
-            nav ul li a:hover::after{
-                width:100%;
-            }
-            .header-text{
-                margin-top: 6%;
-                font-size: 40px;
-                text-align: center;
-            }
-            .header-text h1{
-                font-style: italic;
-                font-size: 70px;
-                margin-top:20px;
-                color: #efc437;
-            }
-            .header-text p{
-                color:#000000;
-            }
-        </style>
-    </div>
-</div>
-
-<!---------page-d'acceuil------->
-<div id="acceuil">
-    <div class="container1">
-        <div class="About-col-1">
-            <h1 class="subtitle">Social media</h1>
-            <div class="About-col-2">
-                <h1 class="subtitle1">marketing agency</h1>
-            </div>
-            <div class="About-col-3">
-                <p>Nous sommes experts dans la création de prospects de grande qualité<br>
-                    pour les entreprises, leur permettant de se consacrer pleinement à leurs business
-                </p>
-            </div>
-            <div class="About-col-4">
-                <img src="images/Capture4_prev_ui.png" alt="About Us Image">
-            </div>
-        </div>
-        <div class="About-col-5">
-            <a href="#contact" class="btn">contactez-nous</a>
-        </div>
-    </div>
-</div>
-
 <style>
-    .About-col-1{
-        font-style: Normal;
-        margin-top:100px;
-        margin-left:50px;
-        font-size:40px;
-    }
-    .About-col-1  h1 {
-        font-weight: 900;
-        font-size:56px;
-    }
-    .About-col-2  h1 {
-        margin-left:-68px;
-    }
-    .About-col-3  p {
-        font-size:17px;
-        margin-left:-68px;
-        margin-top:20px;
-    }
-    .About-col-1 {
-        flex-basis: 30%;
-    }
-    .About-col-1 img{
-        width: 50%;
-        border-radius: 30px;
-        margin-left:570px;
-        margin-top:-400px;
-    }
-    .btn{
-        display: block;
-        width: fit-content;
-        border: 2px solid #000000;
-        padding: 10px 15px;
-        border-radius: 30px;
-        text-decoration: none;
-        color: #FFFFFF;
-        transition: background 0.5s;
-        background:#000000;
-        margin-top:-45px;
-    }
-    .btn:hover{
-        background: #FFFFFF;
-        color:#000000;
+    @media only screen and (max-width: 600px){
+    .header-text{
+         font-size: 50px;
     }
 </style>
+ <div class="background-video">
+    <img src="images/Untitled design (2).png">
+    Your browser does not support the video tag.
+</div>
+<style>
+  .background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Ensures the video stays in the background */
+}
+.background-video img {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+<body>
+<div id="wrapper">
+    <div id="header">
+    <div class="container">
+      <nav>
+        <li><h1>GAC-media</h1> </li>
+        <ul id="sidemenu">
+          <li><a href="#acceuil">about-us</a> </li>
+          <li><a href="#services">services</a> </li>
+          <li><a href="#quote">PDG</a> </li>
+          <li><a href="#contact">contact</a> </li>
+        </ul>
+        </nav>
+        <style>
+   #header{
+      width:80%;
+      margin-left: auto;
+      margin-right:auto;
+      height: 100vh;
+      text-align=center;
+  }
+  .container{
+      padding: 10px 5%;
+  }
+  nav{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap= wrap;
+  }
+  nav ul li {
+      display: inline-block;
+      list-style: none;
+      margin:10px 20px;
+  }
+  li {
+      display: inline-block;
+      list-style: none;
+      margin:10px 20px;
+  }
+  nav ul li a{
+      color:#black;
+      text-decoration:none;
+      font-size: 18px;
+      position:relative;
+  }
+  nav ul li a::after{
+      content: '';
+      width:0;
+      height: 3px;
+      background:#gray ;
+      position: absolute;
+      left:0;
+      bottom:-6px;
+      transition:0.5s;
+  }
+  nav ul li a:hover::after{
+       width:100%;
+  }
+  nav ul li a:hover::after{
+       width:100%;
+  }
+  .header-text{
+        margin-top: 6%;
+        font-size: 40px;
+        text-align: center;
+  }
+  .header-text h1{
+        font-style: italic;
+        font-size: 70px;
+        margin-top:20px;
+        color: #efc437;
+  }
+  .header-text p{
+        color:#black;
+  }
+      </style>
+  <!---------page-d'acceuil------->
+<div id="acceuil">
+    <div class="container1">
+         <div class="About-col-1">
+           <h1 class="subtitle" >Social media</h1>
+             <div class="About-col-2">
+                 <h1 class="subtitle1" >marketing agency</h1>
+             </div>
+             <div class="About-col-3">
+                 <p>Nous sommes experts dans la création  de prospects de grande qualité<br>
+                    pour les entreprises, leur permettant de se consacrer pleinement à leurs business</p>
+             </div>
+                  <div class="About-col-4">
+                    <img src="images/Capture4_prev_ui.png">
+                  </div>
+              </div>
+         </div>
 
-<!-------services----------->
+         <a href="#" class="btn">contactez-nous</a>
+    </div>
+</div>
+        <style>
+            .About-col-1{
+            font-style: Normal;
+            margin-top:100px;
+            margin-left:50px;
+            font-size:40px;
+                }
+            .About-col-1  h1 {
+            font-weight: 900;
+            font-size:56px;
+            }
+            .About-col-2  h1 {
+            margin-left:-68px;
+            }
+            .About-col-3  p {
+            font-size:17px;
+            margin-left:-68px;
+            margin-top:20px;
+            }
+            .About-col-1 {
+            flex-basis: 30%;
+            }
+            .About-col-1 img{
+             width: 50%;
+             border-radius: 30px;
+             margin-left:570px;
+             margin-top:-400px;
+             }
+             .btn{
+              display: block;
+              width: fit-content;
+              border: 2px solid #000000;
+              padding: 10px 15px ;
+              border-radius: 30px;
+              text-decoration: none;
+              color: #FFFFFF;
+              transition: background 0.5s;
+              background:#000000;
+              margin-top:-45px;
+              }
+              .btn:hover{
+               background: #FFFFFF ;
+               color:#000000;
+               }
+        </style>
+ <!-------services----------->
 <div id="services">
     <div class="container">
         <div class="services-col-1">
             <h1>Nos services</h1>
         </div>
-        <div class="services-col-2">
-            <img src="images/Capture5_prev_ui.png" alt="Service Image 1">
-            <h1>Generation des leads qualifiés</h1>
-            <p>La génération de leads a toujours été fondée sur plusieurs étapes clés,
-                la connexion, la capture et la conversion.
-            </p>
+         <div class="services-col-2">
+             <img src="images/Capture5_prev_ui.png">
+             <h1>Generation des leads qualifiés</h1>
+             <p>La génération de leads a toujours été fondée sur plusieurs étapes clés,
+              la connexion, la capture et la conversion.</p>
         </div>
-        <div class="services-col-3">
-            <img src="images/Capture6_prev_ui.png" alt="Service Image 2">
-            <h1>Branding & social media</h1>
-            <p>La gestion des réseaux sociaux est devenue essentielle pour renforcer<br>
-                la notoriété des marques.
-            </p>
+         <div class="services-col-3">
+             <img src="images/Capture6_prev_ui.png">
+             <h1>Branding & social media</h1>
+             <p>La gestion des comptes et les stratégies surles médias sociaux,<br>
+              ainsi que la création de sites web.</p>
         </div>
         <div class="services-col-4">
-            <img src="images/Capture7_prev_ui.png" alt="Service Image 3">
-            <h1>Advertising</h1>
-            <p>La publicité en ligne et la création de contenu qui captive l'audience<br>
-                et génère de l'engagement.
-            </p>
-        </div>
-    </div>
-</div>
-
-<!-------quote----------->
-<div id="quote">
-    <div class="container">
-        <div class="quote-col-1">
-            <h1>Quote</h1>
-            <p> "Les réseaux sociaux ne créent pas de nouvelles relations. Ils améliorent simplement<br>
-                nos relations existantes et nous permettent de partager plus d'informations.
-                Nos vies sont riches en informations, mais pauvres en attention."</p>
-            <span>GAC PDG</span>
-        </div>
-        <div class="quote-col-2">
-            <img src="images/Capture8_prev_ui.png" alt="Quote Image">
-        </div>
-    </div>
-</div>
-
-<!--------form---------->
-<div id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="subtitle">Contactez-nous</h1>
-                <form id="contact-form" action="submit.php" method="post">
-                    <input type="text" name="name" id="name" placeholder="Votre nom" required>
-                    <input type="email" name="email" id="email" placeholder="Votre Email" required>
-                    <input type="numero" name="numero" id="numero" placeholder="Votre Numero" required>
-                    <button type="submit" class="btn">Envoyer</button>
-                </form>
-            </div>
+             <img src="images/Capture7_prev_ui.png">
+             <h1>Marketing & advertissement</h1>
+             <p>Infrastructure et stratégies, approche systématique
+              pour faire croître une entreprise en ligne.</p>
         </div>
     </div>
 </div>
 <style>
-    .contact-form {
-        margin-top:-30px;
+    .services-col-1{
+            font-style: Normal;
+            font-size:40px;
+            text-align:center;
+            margin-top:40px;
     }
-    .contact-left{
-        flex-basis: 50%;
+    .services-col-1  h1 {
+            font-weight: 900;
+            font-size:56px;
     }
-    .contact-left form{
-        width: 100%;
-        margin-top: 30px;
+    .services-col-2 img {
+             width: 36%;
+             border-radius: 30px;
+             margin-left:-80px;
+             margin-top:70px;
     }
-    .contact-left input, .contact-left textarea{
-        width: 100%;
-        padding: 15px;
-        border: 1px solid #000000;
-        margin-bottom: 17px;
-        outline: none;
+    .services-col-2  h1 {
+            font-weight: 900;
+            font-size:26px;
+            margin-top:-240px;
+            margin-left:270px;
     }
-    .contact-left button{
-        border: none;
-        padding: 15px 30px;
-        cursor: pointer;
-        background: #000000;
-        color: #FFFFFF;
-        transition: background 0.5s;
-        margin-top: auto;
+    .services-col-2  p {
+            font-weight: 520;
+            font-size:19.50px;
+            margin-left:270px;
     }
-    .contact-left button:hover{
-        background: #FFFFFF;
-        color: #000000;
+    .services-col-3 img {
+             width: 36%;
+             border-radius: 30px;
+             margin-left:700px;
+             margin-top:140px;
     }
-    .contact-left h1{
-        margin-bottom: 50px;
+    .services-col-3  h1 {
+            font-weight: 900;
+            font-size:26px;
+            margin-top:-240px;
+            margin-left:-5px;
+    }
+    .services-col-3  p {
+            font-weight: 520;
+            font-size:19.50px;
+            margin-left:-5px;
+    }
+    .services-col-4 img {
+             width: 36%;
+             border-radius: 30px;
+             margin-left:-80px;
+             margin-top:140px;
+    }
+    .services-col-4  h1 {
+            font-weight: 900;
+            font-size:26px;
+            margin-top:-240px;
+            margin-left:270px;
+    }
+    .services-col-4  p {
+            font-weight: 520;
+            font-size:19.50px;
+            margin-left:270px;
+    }
+    .services-col-3{margin-top:-40px;}
+    .services-col-4{margin-top:-40px;}
+</style>
+<!----------------mots du pdg----------->
+<div id="quote">
+    <div class="container">
+        <div class="quote-col-1">
+            <h1>GAC-Media</h1>
+            <p>“Notre mission est de fusionner des compétences dans les domaines des affaires, de la mode et
+                des médias pour créer une marque incontournable, une véritable force créative. Tout compromis serait inacceptable."</p>
+            <p1>Ayman Ahllabhair-PDG</p></p1>
+        </div>
+        <a href="#" class="btn1">contactez-nous</a>
+    </div>
+</div>
+<style>
+    #quote{
+    background-color: #000000;
+    margin-top: 15%;
+    border-radius: 28px;
+    padding: 90px 20px;
+    color: white;
+    }
+    .quote-col-1{
+    margin-top:-100px;
+    margin-left:-30px;
+    }
+    .quote-col-1 h1 {
+    font-weight: 700;
+    font-size:50px;
+    }
+    .quote-col-1 p {
+    margin-top:60px;
+    font-weight: 300;
+    font-size:27px;
+    }
+    .quote-col-1 p1 {
+    margin-top:80px;
+    font-weight: 300;
+    font-size:27px;
+    }
+    .btn1{
+       display: block;
+       width: fit-content;
+       border: 2px solid #FFFFFF;
+       padding: 10px 30px ;
+       border-radius: 20px;
+       text-decoration: none;
+       color: #000000;
+       transition: background 0.5s;
+       background:#FFFFFF;
+       margin-top:-10px;
+       font-weight:400;
+    }
+    .btn1:hover{
+       background: #000000 ;
+       color:#FFFFFF;
     }
 </style>
+<!------------contact----------->
+<div id="contact">
+    <div class="container">
+        <div class="quote-col-1">
+            <h1>contactez-nous!</h1>
+        </div>
+        <div class="contact-left">
+            <form action="index.php" method="post">
+                <input type="text" name="name" placeholder="Votre nom" required><br>
+                <input type="email" name="email" placeholder="votre Email" required><br>
+                <input type="tel" name="phone" placeholder="votre numero" required><br>
+                <button type="submit" class="btn">confirmez</button>
+            </form>
+        </div>
+        <div class="contact-right">
+        <p><i class="fa fa-paper-plane"></i>ahllabhairyman@gmail.com</p>
+        <p><i class="fa fa-phone "></i>0676263023</p>
+         <div class="social-icons">
+              <a href="https://web.facebook.com/aestheticsignatures"> <i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+              <a href="https://www.instagram.com/dr.naouar_ibnou/"> <i class="fa fa-instagram w3-hover-opacity"></i></a>
+              <a href="https://www.linkedin.com/feed/"> <a href="https://www.linkedin.com/feed/" class="fa fa-linkedin w3-hover-opacity"></a></a>
+         </div>
+      </div>
+    </div>
+</div>
+<style>
+    #contact {
+    background-color: #FFFFFF;
+    border-radius: 28px;
+    padding: 70px 20px;
+    color: black;
+    }
+    .contact-left{
+      margin-top:-4%;
+      flex-basis: 60%;
+}
+    .contact-left a {
+      margin-top:50px
+    }
+    form input, form textarea{
+    width:20%;
+    border:1;
+    outline: none;
+    background: #000000;
+    padding: 5px;
+    margin: 10px 5px;
+    color: #FFFFFF;
+    font-size: 14px;
+    border-radius: 1%;
+    margin-top:60px;
+}
+  .contact-right {
+    margin-left:450px;
+    margin-top: -300px;
+   }
+   .contact-right i {
+    width:87px;
+    font-size:40px;
+   }
+   .contact-right  p {
+    margin-top:
+   }
+   .social-icons{
+   margin-top:145px;
+   margin-left:40px;
+   }
+   .social-icons a {
+      text-decoration: none;
+      font-size: 30px;
+      margin-right: 15px;
+      color: #000000;
+      display: inline-block;
+      transition: transform 0.5s;
+}
+.social-icons a:hover{
+      color:#000000;
+      transform: translateY(-5px);
+}
+</style>
+  <!------------footer--------------->
+<div id="footer">
+        <div class="container">
+            <div class="col-1">
+                <h1>GAC</h1>
+                <h2>media</h2>
+            </div>
+            <div class="col-2">
+                <h1>contact</h1>
+                <a href="#" class="btn2">about-us</a><br>
+                <a href="#" class="btn2">services</a><br>
+                <a href="#" class="btn2">portfolio</a>
+        </div>
+            <div class="col-3">
+                <a href="#" class="btn2">facebook</a><br>
+                <a href="#" class="btn2">instagram</a><br>
+                <a href="#" class="btn2">linkedin</a>
+            </div>
+        </div>
+    <div class="container">
+          <div class="copyright">
+        <p>Copyright ©Ayman Ahllabhair. Made by him</p>
+          </div>
+      </div>
+</div>
+        <style>
+            .col-1  h1 {
+               font-size:90px;
+               font-weight:900;
+            }
+            .col-1  h2 {
+               font-size:100px;
+               font-weight:200;
+               margin-left:-20px;
+               margin-top:-70px;
+            }
+            .col-2{
+               text-align:center;
+               margin-top:-170px;
+               margin-left:150px;
+               align-items: center;
+               justify-content: space-between;
+               flex-wrap= wrap;
+            }
+            .col-2 h1 {
+               font-size:20px;
+               margin-left:395px;
+            }
+            .col-2 a {
+            font-weight:550;
+      color:#black;
+      text-decoration:none;
+      font-size: 18px;
+      position:relative;
+  }
+      col-2 a::after{
+      content: '';
+      width:0;
+      height: 3px;
+      background:#gray ;
+      position: absolute;
+      left:0;
+      bottom:-6px;
+      transition:0.5s;
+  }
+  col-2 a:hover::after{
+       width:100%;
+  }
+      .col-3{
+               text-align:center;
+               margin-top:-80px;
+               margin-left:550px;
+               align-items: center;
+               justify-content: space-between;
+               flex-wrap= wrap;
+            }
+            .col-3 a {
+            font-weight:550;
+      color:#black;
+      text-decoration:none;
+      font-size: 18px;
+      position:relative;
+  }
+      col-3 a::after{
+      content: '';
+      width:0;
+      height: 3px;
+      background:#gray ;
+      position: absolute;
+      left:0;
+      bottom:-6px;
+      transition:0.5s;
+  }
+  col-3 a:hover::after{
+       width:100%;
+  }
+  .copyright{
+   font-size:12px;
+   text-align:center;
+   margin-top:60px;
+  }
+        </style>
 </body>
 </html>
