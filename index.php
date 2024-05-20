@@ -338,12 +338,51 @@
             <h1>contactez-nous!</h1>
         </div>
         <div class="contact-left">
-        <form name="submit-to-google-sheet">
-           <input type="text" name="Name" placeholder="Votre nom" required><br>
-           <input type="email" name="email" placeholder="votre Email" required><br>
-            <input number="phone" name="phone" placeholder="votre numero" required>
-            <a href="index4.html"  class="btn">confirmez</a>
-        </form>
+            <form action="index.php" method="post">
+                <input type="text" name="name" placeholder="Votre nom" required><br>
+                <input type="email" name="email" placeholder="votre Email" required><br>
+                <input type="tel" name="phone" placeholder="votre numero" required><br>
+                <button type="submit" class="btn">confirmez</button>
+            </form>
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // Database configuration
+                $servername = "localhost";
+                $username = "root"; // Change this if you have a different username
+                $password = ""; // Change this if you have a different password
+                $dbname = "gacmediadb"; // Make sure this matches your database name
+
+                // Create connection
+                $conn = new mysqli($servername, $username, $password, $dbname);
+
+                // Check connection
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+
+                // Get form data
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+
+                // Prevent SQL injection
+                $name = $conn->real_escape_string($name);
+                $email = $conn->real_escape_string($email);
+                $phone = $conn->real_escape_string($phone);
+
+                // Insert data into the database
+                $sql = "INSERT INTO users (name, email, phone) VALUES ('$name', '$email', '$phone')";
+
+                if ($conn->query($sql) === TRUE) {
+                    echo "<p style='color: green;'>Merci on vous rappellerait plus-tard</p>";
+                } else {
+                    echo "<p style='color: red;'>Error: " . $sql . "<br>" . $conn->error . "</p>";
+                }
+
+                // Close connection
+                $conn->close();
+            }
+            ?>
         </div>
         <div class="contact-right">
         <p><i class="fa fa-paper-plane"></i>ahllabhairyman@gmail.com</p>
